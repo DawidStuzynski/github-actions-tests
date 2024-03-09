@@ -1,4 +1,4 @@
-name: Test workflow
+name: Ignore path workflow
 on:
   pull_request:
     types:
