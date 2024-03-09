@@ -1,8 +1,5 @@
-name: Event pull request
-on:
-  pull_request:
-    types:
-      - opened
+name: Event pull request v2
+on: push
 jobs:
   info:
     runs-on: ubuntu-latest
