@@ -1,0 +1,23 @@
+name: Ignore path workflow
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+      - 'dev*'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev*'
+      - 'test*'
+    paths-ignore:
+      - './github/workflows/*'
+
+jobs:
+  info:
+    name: Some example job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJSON(github) }}"
