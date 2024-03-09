@@ -1,4 +1,4 @@
-name: Ignore path workflow
+name: Ignore path workflow v2
 on:
   pull_request:
     types:
