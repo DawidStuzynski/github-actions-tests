@@ -1,5 +1,8 @@
-name: Output
-on: workflow_dispatch
+name: Event pull request
+on:
+  pull_request:
+    tags:
+      - opened
 jobs:
   info:
     runs-on: ubuntu-latest
