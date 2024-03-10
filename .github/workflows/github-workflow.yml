@@ -20,4 +20,4 @@ jobs:
     name: Some example job
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ toJSON(github) }}"
+      - run: echo "Hello"
