@@ -1,4 +1,4 @@
-name: Ignore path workflow
+name: Merge request event
 on:
   pull_request:
     types:
