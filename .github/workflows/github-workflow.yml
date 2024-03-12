@@ -1,4 +1,4 @@
-name: Merge request event
+name: Ignore path workflow
 on:
   pull_request:
     types:
@@ -6,6 +6,14 @@ on:
     branches:
       - main
       - 'dev*'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev*'
+      - 'test*'
+    paths-ignore:
+      - './github/workflows/*'
 
 jobs:
   info:
