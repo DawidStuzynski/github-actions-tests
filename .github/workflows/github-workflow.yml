@@ -16,11 +16,11 @@ on:
       - './github/workflows/*'
 
 jobs:
-  info:
+  build:
     name: Some example job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: 'pypy3.9'
@@ -29,4 +29,12 @@ jobs:
         with:
           name: myartifact
           path: artifact-folder
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: myartifact
+        run: ls
 
