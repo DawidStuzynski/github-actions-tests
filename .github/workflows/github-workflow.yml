@@ -20,4 +20,13 @@ jobs:
     name: Some example job
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello"
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 'pypy3.9'
+      - run: python script.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: myartifact
+          path: artifact-folder
+
